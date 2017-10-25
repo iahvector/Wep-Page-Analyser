@@ -1,0 +1,40 @@
+{
+  "name": "immoscout24",
+  "version": "0.1.0",
+  "description": "ImmoScout24 tech challenge for senior nodejs engineer",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iahvector/immoscout24-tech-challenge.git"
+  },
+  "keywords": [
+    "immoscoute24",
+    "nodejs",
+    "engineer"
+  ],
+  "author": "iahvector",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iahvector/immoscout24-tech-challenge/issues"
+  },
+  "homepage": "https://github.com/iahvector/immoscout24-tech-challenge#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "async": "^2.5.0",
+    "cheerio": "^1.0.0-rc.2",
+    "co": "^4.6.0",
+    "express": "^4.14.0",
+    "superagent": "^3.3.2"
+  }
+}
