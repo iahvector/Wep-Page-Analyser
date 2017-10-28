@@ -6,7 +6,7 @@ services:
             context: ./
             dockerfile: ./docker/nginx/Dockerfile
         volumes:
-            - ./app/:/var/www/immoscout24
+            - ./client/build:/var/www/immoscout24
         links:
             - nodejs
         ports:
