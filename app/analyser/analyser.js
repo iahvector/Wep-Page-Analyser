@@ -29,14 +29,14 @@ class Analyser {
     return new Promise((resolve, reject) => {
       agent.get(this.url.href).then((res) => {
         if (res.type !== 'text/html') {
-          return reject(new errors.InvalidContentError(url))
+          return reject(new errors.InvalidContentError(this.url.href))
         }
 
         this.page_body = res.text.trim()
         this.$ = cheerio.load(this.page_body)
         resolve(this.page_body)
       }).catch((err) => {
-        return reject(new errors.UnreachableUrlError(url, err.status))
+        return reject(new errors.UnreachableUrlError(this.url.href, err.status))
       })
     })
   }
@@ -102,7 +102,7 @@ class Analyser {
       let full_urls = []
 
       for (let i = 0; i < links.length; i++) {
-        let link = links[i].attribs.href.trim()
+        let link = links[i].attribs.href? links[i].attribs.href.trim() : ''
         if (link.startsWith('#')) {
           count.internal++
 
