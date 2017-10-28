@@ -1,6 +1,7 @@
 'use strict'
 
 let express = require('express')
+let cors = require('cors')
 let restApi = require('./adapters/rest/index')
 
 let PORT = process.env.PORT
@@ -10,6 +11,7 @@ if (!PORT) {
 }
 
 let app = express()
+app.use(cors())
 app.use('/api', restApi)
 
 let server = app.listen(PORT, () => {
